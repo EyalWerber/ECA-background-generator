@@ -96,7 +96,6 @@ def main(rule):
         
         gen_prev,gen_now = gen_now,gen_next
         
-        
         for i in range(0,len(gen_now)):
             
             if i == 0:
