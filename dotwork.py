@@ -31,8 +31,6 @@ def gradient_color(ECA_matrix):
 
 
 def rules(ECA_matrix):
-  error_blue_meter =0
-  error_green_meter =0
   invert = '▓'
 
   for j in range(len(pingy[0])):

@@ -4,10 +4,8 @@ import random
 
 
 def binasci_converter(rule):
-    bin_rule = (f'{rule:08b}')
-    bin_rule =bin_rule.replace('0',' ')
-    bin_rule =bin_rule.replace('1','▓')
-    return bin_rule
+
+    return f'{rule:08b}'.replace('0',' ').replace('1','▓')
 
 def rule_randomizer(rule,j,change_every):
     if j%change_every==0:
@@ -55,26 +53,14 @@ def rules(nums,rule):
     elif nums==['▓','▓','▓']:
         return rule[0]
 
+
+
+
 def singular_start(dots):
-    gen_now=[]
-    for i in range(dots):
-        gen_now.append(' ')
-    gen_now.append('▓')
-    for i in range(dots):
-        gen_now.append(' ')
-    return gen_now
+    return [' ' if not i == dots/2 else '▓' for i in range(dots)]
 
 def random_start(dots):
-    gen_now=[]
-    for i in range((dots*2)+1):
-        gen_now.append(random.randint(0,1))
-
-    for i in range((dots*2)+1):
-        if gen_now[i]==1:
-            gen_now[i] = '▓'
-        else:
-            gen_now[i] = ' '
-    return gen_now
+    return [random.choice(' ▓') for i in range(dots)]
 
     
 
@@ -87,17 +73,15 @@ def random_start(dots):
 def main(rule):
 
     whole_prompt =[]
-    DOTS= 1010
-    # dots = int(input('Input dot number(4-what fits in your screen): '))
+    DOTS= 2020 #
+    
 
     # #  One starting point!
-    # gen_now = singular_start(DOTS)
+    gen_now = singular_start(DOTS)
 
     #Random multiple starting points
-    gen_now=random_start(DOTS)
+    # gen_now=random_start(DOTS)
 
-    # rule = 99
-    # rule = int(input('Input Elementary Cellular Automata rule(0-255): '))
     bin_rule = binasci_converter(rule)#format to 8-bit binary
 
     for i in range(len(gen_now)):        
@@ -110,8 +94,8 @@ def main(rule):
 
     for j in range(iterations):
         
-        gen_prev = gen_now
-        gen_now = gen_next
+        gen_prev,gen_now = gen_now,gen_next
+        
         
         for i in range(0,len(gen_now)):
             
