@@ -13,7 +13,7 @@ def rule_randomizer_bank(rule, j, change_every):
                              126, 106, 255, 184, 178, 232, 150, 105, 104, 90, 108, 122, 1, 99, 86])
         bin_rule = binasci_converter(rule)
         with open('rules.txt', 'a') as f:
-            f.writelines(f'rule: {rule}\n')
+            f.writelines(f'* rule: {rule}\n')
             
         return bin_rule, rule
     else:
