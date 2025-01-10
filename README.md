@@ -1,17 +1,17 @@
 ![photo](./output.png) 
- * rule: 1
-* rule: 1
+ * rule: 26
+* rule: 106
 * rule: 30
+* rule: 255
 * rule: 90
+* rule: 22
 * rule: 30
-* rule: 18
-* rule: 99
+* rule: 11
+* rule: 11
+* rule: 3
 * rule: 57
-* rule: 99
-* rule: 30
 * rule: 57
-* rule: 105
-* rule: 1
+* rule: 106
 * rule: 122
-* rule: 86
-* rule: 26
+* rule: 1
+* rule: 11
